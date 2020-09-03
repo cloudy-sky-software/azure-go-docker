@@ -1,0 +1,66 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2020-07-17T19:14:53.645554-07:00",
+            "magic": "5a75abb5b2ff53ed9b89f85a9695e29fa8dae3a4fda6f25046f39ac04a413d92",
+            "version": "v2.6.1"
+        },
+        "secrets_providers": {
+            "type": "service",
+            "state": {
+                "url": "http://localhost:8080",
+                "owner": "test-pul-org",
+                "project": "azure-go-docker",
+                "stack": "dev"
+            }
+        },
+        "resources": [
+            {
+                "urn": "urn:pulumi:dev::azure-go-docker::pulumi:pulumi:Stack::azure-go-docker-dev",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack"
+            },
+            {
+                "urn": "urn:pulumi:dev::azure-go-docker::pulumi:providers:azure::default",
+                "custom": true,
+                "id": "41b93e3f-d8f3-4b9c-a8b6-437951ae51ca",
+                "type": "pulumi:providers:azure",
+                "inputs": {
+                    "environment": "public",
+                    "location": "westus",
+                    "version": "3.0.0"
+                },
+                "outputs": {
+                    "environment": "public",
+                    "location": "westus",
+                    "version": "3.0.0"
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::azure-go-docker::azure:core/resourceGroup:ResourceGroup::resourceGroup",
+                "custom": true,
+                "id": "/subscriptions/0282681f-7a9e-424b-80b2-96babd57a8a1/resourceGroups/resourcegroup830b7965",
+                "type": "azure:core/resourceGroup:ResourceGroup",
+                "inputs": {
+                    "__defaults": [
+                        "name"
+                    ],
+                    "location": "WestUS",
+                    "name": "resourcegroup830b7965"
+                },
+                "outputs": {
+                    "id": "/subscriptions/0282681f-7a9e-424b-80b2-96babd57a8a1/resourceGroups/resourcegroup830b7965",
+                    "location": "westus",
+                    "name": "resourcegroup830b7965",
+                    "tags": {}
+                },
+                "parent": "urn:pulumi:dev::azure-go-docker::pulumi:pulumi:Stack::azure-go-docker-dev",
+                "provider": "urn:pulumi:dev::azure-go-docker::pulumi:providers:azure::default::41b93e3f-d8f3-4b9c-a8b6-437951ae51ca",
+                "propertyDependencies": {
+                    "location": []
+                }
+            }
+        ]
+    }
+}
