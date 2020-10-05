@@ -28,8 +28,6 @@ env:
 
 jobs:
   pulumi:
-    env:
-      GOPATH: ${{ github.workspace }}
     name: Pulumi
     runs-on: ubuntu-latest
     steps:
@@ -48,8 +46,6 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: 1.13.x
-          
-      - run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
       - name: Install Pulumi CLI
         uses: pulumi/action-install-pulumi-cli@releases/v1
